@@ -1,4 +1,5 @@
-const DURATION = 170
+const FREQUENCY = 35
+const DURATION = 130
 const INTERVAL = DURATION/2
 const COLOR = [255, 0, 0]
 
@@ -24,4 +25,11 @@ setInterval(_ => {
 
 const fullscreen = _ => {
     document.body.requestFullscreen()
+
+    audioContext = new AudioContext()
+    oscillator = audioContext.createOscillator()
+    oscillator.type = "sine"
+    oscillator.frequency.value = FREQUENCY
+    oscillator.connect(audioContext.destination)
+    oscillator.start(audioContext.currentTime)
 }

@@ -1,4 +1,5 @@
-const INTERVAL = 60
+const DURATION = 170
+const INTERVAL = DURATION/2
 const COLOR = [255, 0, 0]
 
 let isBlack = false
